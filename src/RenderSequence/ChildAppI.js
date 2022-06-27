@@ -28,8 +28,7 @@ const ChildAppI = (props) => {
         setChildAppIState(prvName => prvName.name == "Jamie Smith" ? {...prvName, name: 'Lonnie Williams'} : {...prvName, name: 'Jamie Smith'});
         console.log(childAppIState);
     }
-
-    console.log("Outside UseEffect: ChildAppI has rendered")
+    
     return (
         <div style={{ border: '3px solid olive', backgroundColor: 'moccasin', padding: '3%' }}>
             <h1 style={{ color: 'red' }}>childAppI.</h1>

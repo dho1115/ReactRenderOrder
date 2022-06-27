@@ -4,6 +4,13 @@ const ChildAppII = (props) => {
     const [childAppIIState, setChildAppIIState] = useState({name: ''});
     const cityRef = createRef();
 
+    useEffect(() => {
+        console.log('Inside useEffect: ChildAppII has rendered.');
+        return () => {
+            
+        };
+    }, []);
+
     function changeChildApp2State() {
         setChildAppIIState(prvName => prvName.name == "AJ Scott" ? {...prvName, name: 'Jane Doe'} : {...prvName, name: 'AJ Scott'});
         console.log(childAppIIState);
@@ -13,13 +20,6 @@ const ChildAppII = (props) => {
         cityRef.current = 'Los Angeles';
         console.log({ cityRef });
     }
-
-    useEffect(() => {
-        console.log('Inside useEffect: ChildAppII has rendered.')
-        return () => {
-            
-        };
-    }, []);
 
     return (
         <div style={{ border: '3px solid maroon', backgroundColor: 'yellow', padding: '3%' }}>

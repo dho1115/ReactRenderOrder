@@ -6,18 +6,19 @@ import ChildAppII from './ChildAppII';
 class RenderSequenceApp extends Component {
     constructor(props) {
         super(props);
-        this.state = { renderChildApp1: false, renderChildAppII: false };
+        this.state = { renderChildApp1: false, renderChildAppII: false, mainPageRender: false };
     }
 
     componentDidMount() {
-        console.log('componentDidMount: RenderSequenceApp.js has rendered.')
+        console.log('componentDidMount: RenderSequenceApp.js has rendered.');
     }
 
     render() {
-        console.log('Inside render() has rendered.')
+        console.log('Main Page Rendered.');
         return (
             <div style={{ padding: '3.5%', border: '1px solid black', backgroundColor: 'silver', margin: '1%' }}>
                 <h1>MAIN RENDER SEQUENCE APP!!!</h1>
+                <h3>Page Rendered: {this.state.mainPageRender ? 'true' : 'false'}.</h3>
                 {
                     this.state.renderChildApp1 ?
                         <ChildAppI />
@@ -45,6 +46,10 @@ class RenderSequenceApp extends Component {
                 <button onClick={() => this.setState({ ...this.state, renderChildAppII: !this.state.renderChildAppII })}>
                     { this.state.renderChildAppII ? <h1>Make Child App II disappear!!!</h1> : <h1>Make Child App II appear!!!</h1> } 
                 </button> 
+
+                <div style={{minHeight: '15px'}} />
+
+                <button onClick={() => this.setState({ mainPageRender: !this.state.mainPageRender })}>RE-RENDER MAIN PAGE.</button>
                 
             </div>
         );
