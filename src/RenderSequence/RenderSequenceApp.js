@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChildAppI from './ChildAppI';
 import ChildAppII from './ChildAppII';
+import Header from './Header';
 
 
 class RenderSequenceApp extends Component {
@@ -17,6 +18,7 @@ class RenderSequenceApp extends Component {
         console.log('Main Page Rendered.');
         return (
             <div style={{ padding: '3.5%', border: '1px solid black', backgroundColor: 'silver', margin: '1%' }}>
+                <Header />
                 <h1>MAIN RENDER SEQUENCE APP!!!</h1>
                 <h3>Page Rendered: {this.state.mainPageRender ? 'true' : 'false'}.</h3>
                 {
